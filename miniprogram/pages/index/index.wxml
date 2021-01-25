@@ -1,0 +1,16 @@
+<!--miniprogram/pages/index/index.wxml-->
+<view class="container">
+	<!-- 图片 -->
+	<!-- <image src="/images/avatar/avatar.jfif" class="user_avatar"></image> -->
+	<!-- 引用框架 -->
+	<l-avatar shape="circle" placement="bottom" size="150" class="user_avatar" open-data="{{['userAvatarUrl','userNickName']}}" />
+
+	<!-- 文本 -->
+	<text class="user_welcome">欢迎你，亲爱的旅人</text>
+
+	<!-- 按钮 -->
+	<!-- <button class="enter_btn">开启我的心灵奇旅</button> -->
+	<view class="user_btn" bind:tap="startTravel">
+		<text>开启我的心灵奇旅</text>
+	</view>
+</view>

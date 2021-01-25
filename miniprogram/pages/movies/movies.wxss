@@ -1,0 +1,25 @@
+/* miniprogram/pages/movies/movies.wxss */
+page{
+  background-color: #f2f2f2;
+}
+
+.ex-search-bar{
+  height: 80rpx !important;
+}
+
+.movie-list{
+  margin-bottom: 30rpx;
+}
+
+.search-container{ 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30rpx 28rpx;
+  justify-content: space-between;
+}
+
+.search-container::after{
+  content: '';
+  width: 200rpx;
+}

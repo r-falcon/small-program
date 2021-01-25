@@ -1,0 +1,22 @@
+<view>
+	<!-- <swiper :indicator-dots="false" autoplay="true" indicator-color="#fff"> -->
+	<!-- 此时不加双括号的false表示的是一个字符串，加双引号的false表示一个布尔值 -->
+	<!-- interval中写不写双括号都ok，是因为js对字符串可以进行一个数据转型 -->
+	<!-- 轮播图 -->
+	<swiper bind:change="goToDetail" indicator-dots="{{true}}" autoplay="true" indicator-active-color="#fff" circular
+		interval="3000">
+		<swiper-item wx:for="{{postList}}" wx:key="index">
+			<image bind:tap="toPage" src="{{item.imgSrc}}"></image>
+		</swiper-item>
+	</swiper>
+
+	<!-- 发布内容（列表渲染） -->
+	<!-- index可以获取到循环的序号，从0开始;index也可以像item那样对属性名进行修改wx:for-index="idx" -->
+	<!-- 修改wx:for-item的值就相当于修改了item，则不能通过item调用数据，要通过新定义的调用数据，但一般不进行修改 -->
+	<!-- 注：data-postId 会在dataset中接受到小写对应值，会自动忽略大小写；data-post-id 这样写才规范，得到postId这一属性 -->
+	<block wx:for="{{postList}}" wx:key="postId">
+		<post bind:posttap= "onGoToDetail" res="{{item}}" />
+	</block>
+
+
+</view>
